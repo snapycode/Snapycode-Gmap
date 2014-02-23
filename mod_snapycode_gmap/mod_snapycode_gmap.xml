@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="module" version="2.5" client="site" method="upgrade">
+	<name>Snapycode Gmap</name><author>SnapyCode</author><creationDate>February 2014</creationDate><copyright>Copyright (C) 2014 SnapyCode. All rights reserved</copyright><license>GNU General Public License</license><authorEmail>dev@snapycode.com</authorEmail><authorUrl>http://snapycode.com</authorUrl><version>1.0</version><description>This is a joomla module for display google map.</description>
+	<files>
+		<filename module="mod_snapycode_gmap">mod_snapycode_gmap.php</filename>
+		<folder>tmpl</folder>
+		<folder>assets</folder>
+		<filename>helper.php</filename>
+		<filename>index.html</filename>
+		<filename>mod_snapycode_gmap.xml</filename>
+	</files>
+	
+	<languages>
+		<language tag="en-GB">en-GB.mod_snapycode_gmap.ini</language>
+		<language tag="en-GB">en-GB.mod_snapycode_gmap.sys.ini</language>
+	</languages>
+	<help key="#" />
+	
+	<config>	
+		<fields name="params">
+		
+		    <fieldset name='basic'>
+		     
+				<field
+					name="snapycode_gmap_map_header"
+					type="textarea"
+					default=""
+					label="MOD_SNAPYCODE_GMAP_HEADER"
+					description="MOD_SNAPYCODE_GMAP_HEADER" />
+					
+				<field
+					name="snapycode_gmap_map_footer"
+					type="textarea"
+					default=""
+					label="MOD_SNAPYCODE_GMAP_FOOTER"
+					description="MOD_SNAPYCODE_GMAP_FOOTER" />	
+					
+				<field
+					name="snapycode_gmap_map_address"
+					type="text"
+					default="kolkata,W.B,India"
+					label="MOD_SNAPYCODE_GMAP_ADDRESS"
+					description="MOD_SNAPYCODE_GMAP_ADDRESS" />
+				
+				<field
+					name="snapycode_gmap_map_zoom"
+					type="list"
+					default="7"
+					label="MOD_SNAPYCODE_GMAP_ZOOM"
+					description="MOD_SNAPYCODE_GMAP_ZOOM" >	
+					
+					 <option value="1">1 - Minimum</option>
+  					 <option value="2">2</option>
+					 <option value="3">3</option>
+					 <option value="4">4</option>
+					 <option value="5">5</option>
+					 <option value="6">6</option>
+					 <option value="7">7</option>
+					 <option value="8">8</option>
+					 <option value="9">9</option>
+					 <option value="10">10</option>
+					 <option value="11">11</option>
+					 <option value="12">12</option>
+					 <option value="13">13</option>
+					 <option value="14">14</option>
+					 <option value="15">15</option>
+					 <option value="16">16</option>
+					 <option value="17">17</option>
+					 <option value="18">18</option>
+					 <option value="19">19</option>
+					 <option value="20">20 - Maximum</option>
+				</field>
+				
+				<field
+					name="snapycode_gmap_map_type"
+					type="list"
+					default="ROADMAP"
+					label="MOD_SNAPYCODE_GMAP_TYPE"
+					description="MOD_SNAPYCODE_GMAP_TYPE" >	
+					
+					 <option value="ROADMAP">Roadmap</option>
+  					 <option value="SATELLITE">Satellite</option>
+					 <option value="HYBRID">Hybrid</option>
+					 <option value="TERRAIN">Terrain</option>
+					
+				</field>
+				
+				<field
+					name="snapycode_gmap_map_enable_bubble"
+					type="checkbox"
+					default="1"
+					value="1"
+					label="MOD_SNAPYCODE_GMAP_ENABLE_BUBBLE"
+					description="MOD_SNAPYCODE_GMAP_ENABLE_BUBBLE" />
+					
+				<field
+					name="snapycode_gmap_map_enable_direction"
+					type="checkbox"
+					default="0"
+					value="1"
+					label="MOD_SNAPYCODE_GMAP_ENABLE_DIRECTION"
+					description="MOD_SNAPYCODE_GMAP_ENABLE_DIRECTION" />
+					
+				<field 
+					name="snapycode_gmap_map_marker" 
+					type="filelist" 
+					default="" 
+					label="MOD_SNAPYCODE_GMAP_MARKER" 
+					description="MOD_SNAPYCODE_GMAP_MARKER" 
+					directory="modules\mod_snapycode_gmap\assets\images\map-markers" 
+					filter="" 
+					exclude="" 
+					stripext="" />
+					
+				<field
+					name="snapycode_gmap_map_width"
+					type="text"
+					default="450"
+					label="MOD_SNAPYCODE_GMAP_WIDTH"
+					description="MOD_SNAPYCODE_GMAP_WIDTH" />
+				
+				<field
+					name="snapycode_gmap_map_height"
+					type="text"
+					default="500"
+					label="MOD_SNAPYCODE_GMAP_HEIGHT"
+					description="MOD_SNAPYCODE_GMAP_HEIGHT" />					 	
+		
+    		</fieldset>
+			
+			<fieldset
+				name="advanced">
+        <field
+					name="layout"
+					type="modulelayout"
+					label="JFIELD_ALT_LAYOUT_LABEL"
+					description="JFIELD_ALT_MODULE_LAYOUT_DESC" />
+        <field
+					name="moduleclass_sfx"
+					type="textarea" rows="3"
+					label="COM_MODULES_FIELD_MODULECLASS_SFX_LABEL"
+					description="COM_MODULES_FIELD_MODULECLASS_SFX_DESC" />
+        <field
+					name="cache"
+					type="list"
+					default="1"
+					label="COM_MODULES_FIELD_CACHING_LABEL"
+					description="COM_MODULES_FIELD_CACHING_DESC">
+          <option
+						value="1">JGLOBAL_USE_GLOBAL</option>
+          <option
+						value="0">COM_MODULES_FIELD_VALUE_NOCACHING</option>
+        </field>
+        <field
+					name="cache_time"
+					type="text"
+					default="900"
+					label="COM_MODULES_FIELD_CACHE_TIME_LABEL"
+					description="COM_MODULES_FIELD_CACHE_TIME_DESC" />
+        <field
+					name="cachemode"
+					type="hidden"
+					default="static">
+          <option
+						value="static"></option>
+        </field>
+      </fieldset>
+		  
+		</fields>
+	</config>
+	
+</extension>
